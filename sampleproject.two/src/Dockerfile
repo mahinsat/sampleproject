@@ -1,4 +1,6 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=out/artifacts/sampleproject_two_jar/*.jar
-COPY ${JAR_FILE} app.jar
+FROM openjdk:8-alpine
+ADD sampleproject.two-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8086
 ENTRYPOINT ["java","-jar","/app.jar"]
+
+
